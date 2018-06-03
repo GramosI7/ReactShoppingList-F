@@ -1,4 +1,6 @@
 import React from "react";
+import Article from "./Article";
+
 
 const ItemList = (props) => {
     return(
@@ -6,12 +8,10 @@ const ItemList = (props) => {
             <h3>Votre liste de courses</h3>
             <div>
                 {
-                    props.articles.map(article =>  <div key={article.id}>  {article.quantity} {article.name}</div>)
+                    props.articles.map(article => <Article key={article.id} data={article} editArticle={props.editArticle}/> )
                 }        
             </div>
         </div>
-      
-        
     );
 };
 
